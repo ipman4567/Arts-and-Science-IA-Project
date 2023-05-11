@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Build a Ukuelele With Me ! </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="headertuner">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html"><span>Home</span></a></li>
+                    <li><a href="Instructions.html"><span>Instructions</span></a></li>
+                    <li><a href="Tuner.html"><span>Tuner</span></a></li>
+                    <li><a href="Lessons.html"><span>Lessons</span></a></li>
+                    <li><a href="Miscellaneous.html"><span>Miscellaneous</span></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="tuner">
+            <div class="container">
+                <div class="tunerbox">
+                    <h1> Tune Your Ukulele ! <br><br></h1>
+                    <h2>UKULELE TUNER</h2> <br>
+                    <label for="string-select">Select a string : </label>
+                    <select id="string-select"onchange="playSound()">
+                        <option value="g">G (First String)</option>
+                        <option value="c">C (Second String)</option>
+                        <option value="e">E (Third String)</option>
+                        <option value="a">A (Fourth String)</option>
+                    </select>
+                    <button class="bouton" onclick="playSound();">Play</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    function playSound() {
+        var audio;
+        var select = document.getElementById("string-select");
+        var selectedValue = select.options[select.selectedIndex].value;
+
+        switch(selectedValue) {
+            case "g":
+            audio = new Audio("https://tuner-online.com/audio/ukulele/g4.mp3");
+            break;
+            case "a":
+            audio = new Audio("https://tuner-online.com/audio/ukulele/a4.mp3");
+            break;
+            case "e":
+            audio = new Audio("https://tuner-online.com/audio/ukulele/e4.mp3");
+            break;
+            case "c":
+            audio = new Audio("https://tuner-online.com/audio/ukulele/c4.mp3");
+            break;
+        }
+        audio.play();
+    }
+</script>
+</body>
+</html>
